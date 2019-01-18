@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/tab_home"
+        android:title="@string/home_tab" />
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/tab_objective"
+        android:title="@string/search_tab" />
+
+    <item
+        android:id="@+id/favorites"
+        android:icon="@drawable/tab_conscience"
+        android:title="@string/favorites_tab" />
+
+    <item
+        android:id="@+id/connect"
+        android:icon="@drawable/tab_faith"
+        android:title="@string/connect_tab" />
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/tab_love"
+        android:title="@string/profile_tab" />
+
+</menu>
