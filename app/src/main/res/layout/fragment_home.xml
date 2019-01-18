@@ -1,16 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_sermons"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <ImageView
+        android:id="@+id/iv_header_background"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/colorPrimaryLight" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_header_total_foods"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_header_today_total_foods"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_header_background"
+        app:layout_constraintEnd_toStartOf="@+id/cl_header_kind_foods"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_horizontal"
+            android:text="17"
+            android:textColor="@color/white"
+            android:textSize="80sp"
+            android:fontFamily="@font/hind_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal"
+            android:text="@string/total_foods_for_delivery"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:fontFamily="@font/georgia_italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.90" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_header_kind_foods"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_header_today_kind_foods"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_header_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_quantity_regular_foods"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/hind_bold"
+            android:gravity="center_horizontal"
+            android:text="13"
+            android:textColor="@color/tomato"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_label_regular_foods"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_label_regular_foods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/georgia_italic"
+            android:text="@string/regular_food"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_quantity_hypo_foods"
+            app:layout_constraintEnd_toEndOf="@+id/tv_quantity_regular_foods"
+            app:layout_constraintStart_toStartOf="@+id/tv_quantity_regular_foods" />
+
+        <TextView
+            android:id="@+id/tv_quantity_hypo_foods"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/hind_bold"
+            android:gravity="center_horizontal"
+            android:text="4"
+            android:textColor="@color/turtle_green"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_label_hypo_foods"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_horizontal_separator"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_label_hypo_foods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/georgia_italic"
+            android:text="@string/hypo_food"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_quantity_hypo_foods"
+            app:layout_constraintHorizontal_bias="0.48"
+            app:layout_constraintStart_toStartOf="@+id/tv_quantity_hypo_foods" />
+
+        <View
+            android:id="@+id/view_vertical_separator"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/charcoal_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_horizontal_separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/charcoal_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <cl.moriahdp.RosaApp.utils.customRecyclerView.CustomRecyclerView
+        android:id="@+id/rv_foods"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_header_background" />
+
 </android.support.constraint.ConstraintLayout>

@@ -3,6 +3,13 @@
     <color name="colorPrimary">#fc505d</color>
     <color name="colorPrimaryDark">#F34D59</color>
     <color name="colorAccent">#536DFE</color>
+    <color name="dark">#272736</color>
+    <color name="dark_two">#2c2c3d</color>
+    <color name="charcoal_grey">#424251</color>
+    <color name="tomato">#eb2e29</color>
+    <color name="turtle_green">#69b851</color>
+    <color name="white_two">#eaeaea</color>
+
     <color name="colorPrimaryLight">#FFAB91</color>
     <color name="primaryText">#212121</color>
     <color name="secondaryText">#757575</color>

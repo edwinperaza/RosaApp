@@ -5,6 +5,11 @@
     <string name="default_channel_id">moriah.channel.id</string>
     <string name="default_channel_name">Default</string>
 
+    <!-- Strings related to home today foods -->
+    <string name="regular_food">Regular</string>
+    <string name="hypo_food">Hipocalórico</string>
+    <string name="total_foods_for_delivery">Almuerzos para entregar hoy, Rosita!</string>
+
     <!-- Strings related to login -->
     <string name="error_invalid_email">Correo electrónico inválido</string>
     <string name="error_invalid_password">La contraseña es demasiado corta</string>

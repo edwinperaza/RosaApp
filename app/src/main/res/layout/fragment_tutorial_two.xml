@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.3"
-        android:fontFamily="@font/montserrat_semi_bold"
+        android:fontFamily="@font/lato_regular"
         android:gravity="top"
         android:text="two"
         android:textAlignment="center"

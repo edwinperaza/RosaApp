@@ -1,7 +1,6 @@
 package cl.moriahdp.RosaApp.home.view;
 
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.squareup.otto.Bus;
@@ -15,23 +14,27 @@ import cl.moriahdp.RosaApp.home.fragment.HomeFragment;
 import cl.moriahdp.RosaApp.home.modelObject.HomeModelObject;
 import cl.moriahdp.RosaApp.homeDetail.fragment.HomeDetailFragment;
 import cl.moriahdp.RosaApp.main.activities.DashboardActivity;
+import cl.moriahdp.RosaApp.utils.customRecyclerView.CustomRecyclerView;
+import cl.moriahdp.RosaApp.utils.customRecyclerView.HeaderItemDecoration;
 import cl.moriahdp.RosaApp.utils.recyclerListener.RecyclerOnItemClickListener;
 
 
 public class HomeView extends BaseFragmentView {
 
-    private RecyclerView rvHome;
+    private CustomRecyclerView rvHome;
     private HomeFragment fragment;
     private HomeAdapter adapter = new HomeAdapter();
+    private HeaderItemDecoration headerItemDecoration;
 
     public HomeView(HomeFragment fragment, View rootView, final Bus bus) {
         super(fragment, rootView, bus);
         this.fragment = fragment;
         showLoadingOverlay();
-        rvHome = rootView.findViewById(R.id.rv_sermons);
         LinearLayoutManager llm = new LinearLayoutManager(fragment.getContext());
+        rvHome = rootView.findViewById(R.id.rv_foods);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         rvHome.setLayoutManager(llm);
+        headerItemDecoration = new HeaderItemDecoration(adapter);
         rvHome.setAdapter(adapter);
         adapter.setListener(new RecyclerOnItemClickListener<HomeModelObject>() {
             @Override

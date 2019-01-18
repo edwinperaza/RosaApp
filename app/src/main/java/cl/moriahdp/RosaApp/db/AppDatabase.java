@@ -7,7 +7,7 @@ import android.content.Context;
 import cl.moriahdp.RosaApp.db.dao.HomeModelObjectDao;
 import cl.moriahdp.RosaApp.home.modelObject.HomeModelObject;
 
-@Database(entities = {HomeModelObject.class}, version = 1)
+@Database(entities = {HomeModelObject.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;

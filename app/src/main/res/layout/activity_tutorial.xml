@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:fontFamily="@font/montserrat_semi_bold"
+        android:fontFamily="@font/lato_regular"
         android:paddingBottom="8dp"
         android:paddingEnd="16dp"
         android:paddingStart="16dp"
