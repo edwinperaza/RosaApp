@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import cl.moriahdp.RosaApp.BaseApplication;
 import cl.moriahdp.RosaApp.main.activities.DashboardActivity;
+import cl.moriahdp.RosaApp.utils.TinyDB;
 
 
 public class AlarmReceiver extends BroadcastReceiver {
@@ -15,11 +16,12 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         if (intent.getAction() != null && context != null) {
             if (intent.getAction().equalsIgnoreCase(Intent.ACTION_BOOT_COMPLETED)) {
+                TinyDB tinyDB = new TinyDB(context);
                 // Set the alarm here.
                 NotificationScheduler.setReminder(context,
                         AlarmReceiver.class,
-                        BaseApplication.getInstance().getTinyDB().getInt("hour"),
-                        BaseApplication.getInstance().getTinyDB().getInt("min"));
+                        tinyDB.getInt("hour"),
+                        tinyDB.getInt("min"));
                 return;
             }
         }

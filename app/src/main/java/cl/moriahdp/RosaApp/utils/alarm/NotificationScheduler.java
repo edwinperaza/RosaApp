@@ -31,7 +31,7 @@ public class NotificationScheduler {
 
     public static void setReminder(Context context, Class<?> cls, int hour, int min) {
         Calendar calendar = Calendar.getInstance();
-        TinyDB tinyDB = BaseApplication.getInstance().getTinyDB();
+        TinyDB tinyDB = new TinyDB(context);
 
         Calendar setCalendar = Calendar.getInstance();
         setCalendar.set(Calendar.HOUR_OF_DAY, tinyDB.getInt(ALARM_ONE_HOUR));

@@ -39,6 +39,7 @@ import cl.moriahdp.RosaApp.main.activities.DashboardActivity;
 import cl.moriahdp.RosaApp.registry.activities.RegistryActivity;
 import cl.moriahdp.RosaApp.utils.Constants;
 import cl.moriahdp.RosaApp.utils.Logger;
+import cl.moriahdp.RosaApp.utils.TinyDB;
 
 import static cl.moriahdp.RosaApp.utils.Constants.PASSWORD_MIN;
 import static cl.moriahdp.RosaApp.utils.Constants.VALID_EMAIL_ADDRESS_REGEX;
@@ -62,10 +63,12 @@ public class LoginView extends BaseActivityView {
     private ImageView mLogo;
     private int mTapCount = 0;
     private BaseActivity activity;
+    private TinyDB tinyDB;
 
     public LoginView(LoginActivity activity, Bus bus) {
         super(activity, bus);
         this.activity = activity;
+        tinyDB = new TinyDB(activity);
         mEmailEditText = activity.findViewById(R.id.tie_login_email);
         mEmailInputLayout = activity.findViewById(R.id.til_login_email);
         mPasswordEditText = activity.findViewById(R.id.tie_login_password);
@@ -189,7 +192,7 @@ public class LoginView extends BaseActivityView {
 
                     final String versionName = getVersionNameApp();
                     if (mTapCount > 3) {
-                        final String token = BaseApplication.getInstance().getTinyDB().getString(Constants.FIREBASE_TOKEN);
+                        final String token = tinyDB.getString(Constants.FIREBASE_TOKEN);
                         AlertDialog alertDialog = new AlertDialog.Builder(activityRef.get()).create();
                         alertDialog.setTitle(BuildConfig.FLAVOR + " El Secreto \n " + versionName + " " + BuildConfig.BUILD_TYPE);
                         alertDialog.setMessage(token);
@@ -343,7 +346,7 @@ public class LoginView extends BaseActivityView {
                     new LoginModelObject(
                             mEmailEditText.getText().toString(),
                             mPasswordEditText.getText().toString(),
-                            BaseApplication.getInstance().getTinyDB().getString(Constants.FIREBASE_TOKEN, "Def"))));
+                            tinyDB.getString(Constants.FIREBASE_TOKEN, "Def"))));
 //        }
     }
 
